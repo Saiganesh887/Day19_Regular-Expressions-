@@ -8,6 +8,7 @@ public class UserRegistration {
         static Pattern patternName = Pattern.compile("^[A-Z]{1}[a-z]{2,}$");
         static Pattern patternEmail = Pattern.compile("^[a-zA-Z]+.[a-zA-z]+@bl.co.in$");
         static Pattern patternMobile = Pattern.compile("^[0-9]{2}+\s[0-9]{10}$");
+        static Pattern patternPassword = Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\\W)(?!.* ).{8,16}$");
     public static void main(String[] args) {
           Scanner sc = new Scanner(System.in);
           System.out.println("Enter First Name: ");
@@ -43,6 +44,14 @@ public class UserRegistration {
               } else {
                   System.out.println("Invalid Mobile Number ");
               }
-              
+
+              System.out.println("Enter Password: ");
+              String password1 = sc.next();
+              Matcher password = patternPassword.matcher(password1);
+              if(password.matches()){
+                  System.out.println("valid");
+              }else{
+                  System.out.println("Invalid password");
+              }
     }
 }
