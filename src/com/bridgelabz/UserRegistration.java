@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 public class UserRegistration {
         static Pattern patternName = Pattern.compile("^[A-Z]{1}[a-z]{2,}$");
         static Pattern patternEmail = Pattern.compile("^[a-zA-Z]+.[a-zA-z]+@bl.co.in$");
-        static Pattern patternMobile = Pattern.compile("");
+        static Pattern patternMobile = Pattern.compile("^[0-9]{2}+\s[0-9]{10}$");
     public static void main(String[] args) {
           Scanner sc = new Scanner(System.in);
           System.out.println("Enter First Name: ");
@@ -43,5 +43,6 @@ public class UserRegistration {
               } else {
                   System.out.println("Invalid Mobile Number ");
               }
+              
     }
 }
